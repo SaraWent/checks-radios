@@ -223,6 +223,78 @@
   transform: rotate(45deg);
 }
 </style>
+
+
+<style type="text/css">
+
+/* The container */
+.btnradcont2 {
+  display: inline-block;
+  position: relative;
+  padding: .5em 1.75em;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.btnradcont2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.btnradio2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 100%;
+  background-color: #eee;
+  padding: .25em .5em .3em 1.75em;
+  margin-right: 1em;
+  z-index: -1;
+}
+
+
+/* On mouse-over, add a grey background color  */
+.btnradcont2:hover input ~ .btnradio2 {
+  background-color: #fff;
+} 
+
+/* When the radio button is checked, add abackground */
+.btnradcont2 input:checked ~ .btnradio2 {
+  background-color: #E72042;
+}
+
+/* Create the indicator (hidden when not checked) */
+.btnradio2:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator when checked */
+.btnradcont2 input:checked ~ .btnradio2:after {
+  display: block;
+}
+/* Style the indicator */
+.btnradcont2 .btnradio2:after {
+  left: .33em;
+  top: 0em; /* making up for that 1em .btnradio border */
+  width: .25em;
+  height: .75em;
+  border: solid #fff;
+  border-width: 0 .15em .15em 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+</style>
 <body>
 <!-- Checkboxes -->
   <div class="container">
@@ -279,6 +351,25 @@
     <label class="btnradcont">Four
       <input type="radio" name="radio2">
       <span class="btnradio"></span>
+    </label>
+  </div>
+  <!-- Radios as buttons 2-->
+  <div class="container">
+    <label class="btnradcont2">One
+      <input type="radio" checked="checked" name="radio3">
+      <span class="btnradio2"></span>
+    </label>
+    <label class="btnradcont2">Two
+      <input type="radio" name="radio3">
+      <span class="btnradio2"></span>
+    </label>
+    <label class="btnradcont2">Three
+      <input type="radio" name="radio3">
+      <span class="btnradio2"></span>
+    </label>
+    <label class="btnradcont2">Four
+      <input type="radio" name="radio3">
+      <span class="btnradio2"></span>
     </label>
   </div>
 </body>
